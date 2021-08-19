@@ -6,16 +6,14 @@ import java.util.Calendar;
 public class DateCustom {
 
     private static Calendar cal = Calendar.getInstance();
+    private static String months[] = {"Janeiro/","Fevereiro/","Março/","Abril/","Maio/","Junho/","Julho/","Agosto/","Setembro/","Outubro/","Novembro/","Dezembro/"};
 
     //Informação para o Firebase
     private static SimpleDateFormat sdf = new SimpleDateFormat("MMyyyy");
 
     //Informação para o sistema(mostrar para o usuário)
-    private static SimpleDateFormat sdf2 = new SimpleDateFormat("MM/yyyy");
-
-    //informação Inicial
-    private static SimpleDateFormat sdf3 = new SimpleDateFormat("MM/yyyy");
-
+    private static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy");
+    private static SimpleDateFormat sdf3 = new SimpleDateFormat("M");
 
     public static String dateFirebase(int in){
         if (in == 0){
@@ -27,15 +25,15 @@ public class DateCustom {
     }
 
     public static String dateShowUser(){
-        return sdf2.format( cal.getTime() );
+
+        int test = Integer.parseInt(sdf3.format(cal.getTime())) - 1;
+        if (test > 11){
+            test -= 10;
+        }
+            String returnDate = months[test] + sdf2.format(cal.getTime());
+
+        return returnDate;
     }
-
-    public static String dateNow(){
-        return sdf3.format( cal.getTime() );
-    }
-
-
-
 
 
 }

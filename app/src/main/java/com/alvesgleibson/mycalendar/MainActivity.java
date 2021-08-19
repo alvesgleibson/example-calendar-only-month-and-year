@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         viewText = findViewById(R.id.txtDataExibir);
 
         //Irá setar logo ao execultar o programa a data atual;
-        viewText.setText(DateCustom.dateNow());
+        viewText.setText(DateCustom.dateShowUser());
 
     }
 
