@@ -18,8 +18,10 @@ public class DateCustom {
     public static String dateFirebase(int in){
         if (in == 0){
             cal.add(Calendar.MONTH, -1);
-        }else {
+        }else if (in ==1){
             cal.add(Calendar.MONTH, 1);
+        }else {
+            cal.add(Calendar.MONTH, 0);
         }
         return sdf.format( cal.getTime() );
     }

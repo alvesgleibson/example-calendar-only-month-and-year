@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Irá setar logo ao execultar o programa a data atual;
         viewText.setText(DateCustom.dateShowUser());
-
+        Toast.makeText(this, "Data Selecionada Firebase: "+DateCustom.dateFirebase(2), Toast.LENGTH_SHORT).show();
     }
 
 
